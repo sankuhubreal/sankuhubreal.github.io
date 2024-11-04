@@ -1,47 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-<body>
-<div style='width:640px;height:480px;max-width:100%'>
-    <div id='game'></div>
-</div>
-
-<script type='text/javascript'><!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Emulator</title>
+    <title>Full-Screen Game Emulator</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        #game-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background-color: black; /* Background color for visibility */
+        }
+        #game {
+            width: 640px; /* Fixed width for the game */
+            height: 480px; /* Fixed height for the game */
+            max-width: 100%;
+            max-height: 100%;
+        }
+    </style>
 </head>
 <body>
-    <div style='width:640px;height:480px;max-width:100%'>
+    <div id='game-container'>
         <div id='game'></div>
     </div>
 
     <script type='text/javascript'>
         EJS_player = '#game';
-        EJS_core = 'gba'; // Ensure this is the correct core for your game
+        EJS_core = 'nes'; // Change to 'gba' if you're using a Game Boy Advance ROM
         EJS_lightgun = false; // can be true or false
-        EJS_biosUrl = 'https://drive.usercontent.google.com/download?id=15r37ODfHcXPDLBvbiSzfEHHLBIdikOS7&export=download&authuser=0&confirm=t&uuid=07cea500-acb1-48cf-b63c-9927b89cd008&at=AENtkXYEKv01eiX3CrFpS5V4VTaj:1730684903934';
-        EJS_gameUrl = 'https://drive.usercontent.google.com/u/0/uc?id=1uGLNS6xipLJcj3zaVsBUk3d9wPsbwhIy&export=download';
+        EJS_biosUrl = ''; // URL to BIOS file
+        EJS_gameUrl = ''; // URL to Game ROM
         EJS_pathtodata = 'data/';
     </script>
     <script src='data/loader.js'></script>
-</body>
-</html>
-
-    EJS_player = '#game';
-    // Can also be fceumm or nestopia
-    EJS_core = 'gba';
-    // Lightgun
-    EJS_lightgun = false; // can be true or false
-    // URL to BIOS file
-    EJS_biosUrl = 'https://drive.usercontent.google.com/download?id=15r37ODfHcXPDLBvbiSzfEHHLBIdikOS7&export=download&authuser=0&confirm=t&uuid=07cea500-acb1-48cf-b63c-9927b89cd008&at=AENtkXYEKv01eiX3CrFpS5V4VTaj:1730684903934'; // https://dl.dropboxusercontent.com/s/[random-code]/bios.bin
-    // URL to Game rom
-    EJS_gameUrl = 'https://drive.usercontent.google.com/u/0/uc?id=1uGLNS6xipLJcj3zaVsBUk3d9wPsbwhIy&export=download'; // https://dl.dropboxusercontent.com/s/[random-code]/mario.nes
-    // Path to the data directory
-    EJS_pathtodata = 'data/';
-</script>
-<script src='data/loader.js'></script>
 </body>
 </html>
